@@ -33,6 +33,20 @@ temperature — trained on a 28,242-row FAO/World Bank dataset covering 101 coun
 
 ## Running the Mobile App
 
+1. Install Flutter and confirm your setup: flutter doctor (fix any red ✗ items first).
+2. Clone the repo: git clone https://github.com/k10-j/yield-predictor.git && cd yield-predictor
+3. Install dependencies: flutter pub get
+4. Open lib/main.dart and confirm this line points at the live API:
+
+const String apiBaseUrl = "https://yield-predictor-mfca.onrender.com";
+
+5. Connect a device or start an emulator, then confirm it's detected: flutter devices
+6. Run the app: flutter run — select the Android device/emulator, not Chrome/web.
+7. Wait a few seconds for the Country and Crop dropdowns to load (they're fetched from the API).
+8. Select a Country and Crop, enter Year, Rainfall, Pesticides, and Average Temperature.
+9. Tap Predict — the predicted yield appears in a green box (e.g. "Predicted Yield: 1.7964 tonnes/ha"). A red box appears instead if a field is missing or out of range.
+
+
 ```bash
 cd YieldAPI/../ 
 flutter pub get
